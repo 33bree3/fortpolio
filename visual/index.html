@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visual Projects</title> <!-- Page title in browser tab -->
+
+  <!-- Importing Google Fonts for consistent typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /*
+      Body with warm brown background and off-white text for strong contrast.
+      Content is inside a soft pastel green container for focus and coherence.
+    */
+    body {
+      font-family: 'Quicksand', sans-serif; /* Clean modern font */
+      background: #7a5c3b; /* Warm brown background */
+      margin: 0;
+      padding: 2rem;
+      color: #f4f1e6; /* Off-white text */
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Container for all page content */
+    .container {
+      background: #a3b18a; /* Pastel green container */
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(74, 59, 40, 0.2); /* Warm brown shadow */
+      color: #4a3b28; /* Earthy brown text inside container */
+    }
+
+    /* Main heading with earthy brown color */
+    h1 {
+      text-align: center;
+      color: #4a3b28;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Description paragraph styling */
+    p {
+      text-align: center;
+      color: #6b705c; /* Muted brownish-green for softer text */
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    /* Gallery container uses flexbox for responsive layout */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap; /* Allow images to wrap to next line */
+      gap: 20px; /* Space between images */
+      justify-content: center; /* Center gallery items */
+    }
+
+    /* Individual images styling */
+    .gallery img {
+      width: 280px; /* Fixed width for images */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 10px rgba(74, 59, 40, 0.2); /* Soft warm shadow */
+      border: 2px solid #6b705c; /* Darker pastel green border */
+      background: #f7faf3; /* Light cream background for image container */
+      object-fit: cover; /* Ensure images cover area without distortion */
+      transition: transform 0.3s ease; /* Smooth zoom on hover */
+      cursor: pointer; /* Indicate images are interactable */
+    }
+
+    /* Hover effect to slightly enlarge images */
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(74, 59, 40, 0.4); /* Stronger shadow on hover */
+      border-color: #4a3b28; /* Darker border on hover */
+    }
+ 
+    /* ===== Home Button Styling ===== */
+    
+  .home-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #a3b18a; /* same pastel green */
+  color: #4a3b28; /* dark brown text */
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1.5px solid #5a4328; /* same border as download buttons */
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.home-button:hover {
+  background-color: #5a4328; /* darker brown on hover */
+  color: #f7f4ea; /* off-white text */
+  border-color: #3b2d1f;
+}
+
+  </style>
+</head>
+  <!-- Inside <body> -->
+<button class="home-button" onclick="window.location.replace('https://33bree3.github.io/fortpolio/')">Home</button>
+
+<body>
+
+  
+  <div class="container">
+    <!-- Page heading -->
+    <h1>🎨 Visual Projects</h1>
+
+    <!-- Description of the page content -->
+    <p>Explore a variety of visual concepts, artwork, and drafts.</p>
+
+    <!-- Gallery section showcasing images -->
+    <div class="gallery">
+      <!--
+        TIP: Replace 'placeholder-visual.JPG' with actual image filenames for your artwork.
+        You can add more <img> tags to showcase additional pieces.
+        Alt text helps accessibility and SEO.
+      -->
+      <img src="placeholder-visual.JPG" alt="Art 1" />
+      <img src="placeholder-visual.JPG" alt="Art 2" />
+      <img src="placeholder-visual.JPG" alt="Art 3" />
+    </div>
+
+    <!-- 
+      ➕ EXPANSION IDEAS:
+      - Add captions under each image with <figcaption> inside a <figure>.
+      - Add filtering buttons to show different categories of artwork.
+      - Include a modal/lightbox to view images larger when clicked.
+      - Lazy-load images for performance if gallery grows large.
+    -->
+  </div>
+</body>
+</html>

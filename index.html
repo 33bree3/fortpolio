@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Creative Hub</title>
+  
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    /*
+      Base body styling:
+      - Warm medium brown background
+      - Dark earthy brown text
+      - Use Quicksand font
+      - Remove default margin/padding
+    */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #7a5c3b; /* warm medium brown */
+      color: #4a3b28; /* dark earthy brown text */
+    }
+
+    /*
+      Container centers content with max width and padding
+    */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /*
+      Navigation bar styling:
+      - Centered text
+      - Light pastel green background for contrast
+      - Rounded corners and subtle shadow
+      - Padding around nav items
+    */
+    nav {
+      background-color: #a3b18a; /* pastel green */
+      padding: 1rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /*
+      Navigation links:
+      - Rich brown text color
+      - No underline by default
+      - Bold font weight for prominence
+      - Horizontal spacing between links
+      - Smooth color transition on hover
+    */
+    nav a {
+      color: #4a3b28; /* dark earthy brown */
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    /*
+      Hover effect on navigation links:
+      - Darker brown
+      - Underline for clarity
+    */
+    nav a:hover {
+      color: #5a4328;
+      text-decoration: underline;
+    }
+
+    /*
+      Sections styling (header, section, footer):
+      - Pastel green background for a soft look
+      - Padding and margin for spacing
+      - Rounded corners and subtle shadow for depth
+      - Centered text
+      - Brown text color to keep consistent palette
+    */
+    header,
+    section,
+    footer {
+      background-color: #a3b18a; /* pastel green */
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
+      text-align: center;
+      color: #4a3b28;
+    }
+
+    /*
+      Headings inside sections:
+      - Brown text color to maintain palette
+      - Remove top margin for neat spacing
+      - Bold font weight
+    */
+    h1, h2, h3 {
+      color: #4a3b28;
+      margin-top: 0;
+      font-weight: 600;
+    }
+
+    /*
+      Paragraph and strong text styling:
+      - Ensure consistent brown text
+    */
+    p, strong {
+      color: #4a3b28;
+    }
+
+    /*
+      Links inside sections:
+      - Medium brown color
+      - No underline by default
+      - Bold font for clarity
+      - Hover darkens color and adds underline
+    */
+    section a {
+      color: #7a5c3b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    section a:hover {
+      color: #5a4328;
+      text-decoration: underline;
+    }
+
+    /*
+      Images and iframes:
+      - Max width 100% and auto height to keep responsiveness
+      - Centered with margin auto
+      - Rounded corners and subtle shadows for polish
+      - Pastel green border matching palette
+      - Background behind images if needed
+    */
+    img,
+    iframe {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(122, 92, 59, 0.15);
+      border: 1.5px solid #a3b18a;
+      background: #a3b18a;
+    }
+
+    /*
+      Preview container text alignment
+    */
+    .preview {
+      text-align: center;
+    }
+
+    /*
+      Buttons styling:
+      - Brown background with off-white text
+      - Rounded corners and padding
+      - Pointer cursor on hover
+      - Margin top spacing
+      - Bold text
+      - Smooth background color transition
+    */
+    button {
+      padding: 10px 20px;
+      background-color: #7a5c3b;
+      color: #f7f4ea;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    /*
+      Button hover effect:
+      - Darker brown background for feedback
+    */
+    button:hover {
+      background-color: #5a4328;
+    }
+
+    /*
+      Footer styling:
+      - Center text
+      - Smaller font size
+      - Brown text color
+    */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4a3b28;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Navigation bar with links to all main pages -->
+    <nav>
+      <a href="visual/index.html">Visuals</a>
+      <a href="games/index.html">Games</a>
+      <a href="audio/index.html">Audio</a>
+      <!-- Changed blog link to point to blog folder -->
+      <a href="blog/index.html">Blog</a>
+    </nav>
+
+    <!-- Header Section: Welcome message -->
+    <header>
+      <h1>Welcome to My Creative Portfolio</h1>
+      <p>Explore my work in audio, visuals, and game development.</p>
+    </header>
+
+    <!-- Visual Projects Section -->
+    <section id="visuals">
+      <h2><a href="visual/index.html">🎨 Visual Projects</a></h2>
+      <p>A collection of photographs, artwork, and sketches.</p>
+      <div class="preview">
+        <img src="visual/placeholder-visual.JPG" alt="Visual Preview" />
+        <p><strong>Project Name:</strong> Dreamworld Concept</p>
+      </div>
+    </section>
+
+    <!-- Game Projects Section -->
+    <section id="games">
+      <h2><a href="games/index.html">🎮 Game Projects</a></h2>
+      <p>Playable demos, trailers, and downloadable files from my games.</p>
+      <div class="preview">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/_WcWHZc8s2I"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <p><strong>Game Title:</strong> Low-End</p>
+      </div>
+    </section>
+
+    <!-- Audio Projects Section -->
+    <section id="audio">
+      <h2><a href="audio/index.html">🎧 Audio Projects</a></h2>
+      <p>Ambience, sound effects, and media soundtracks.</p>
+      <div class="preview">
+        <button onclick="alert('Go to Audio Projects page!')">▶ Listen to Samples</button>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2><a href="blog/index.html">📝 My Blog</a></h2> <!-- Updated link -->
+      <p>Read my thoughts, updates, and articles.</p>
+      <div class="preview">
+        <p><strong>Latest post:</strong> My First Blog Post</p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>© Bree's Wonder Emporium 2025.</p>
+    </footer>
+  </div>
+</body>
+</html>

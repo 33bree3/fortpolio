@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog Post - Hip Hop or House?</title>
+
+<style>
+  body {
+    background-color: #7a5c3b;
+    color: #4a3b28;
+    font-family: 'Georgia', serif;
+    margin: 2rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4a3b28;
+    margin-bottom: 2rem;
+    font-family: 'Georgia', serif;
+    width: 100%;
+    text-align: center;
+  }
+  .home-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #a3b18a;
+    color: #4a3b28;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(74, 59, 40, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+  }
+  .home-button:hover {
+    background-color: #5a4328;
+    color: #f7f4ea;
+  }
+  .post-container {
+    background-color: #a3b18a;
+    border-radius: 8px;
+    padding: 1.5rem 2rem 2rem 2rem;
+    max-width: 900px;
+    box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15);
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+  .audio-placeholder {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 200px;
+    max-width: 40vw;
+    box-shadow: 0 2px 6px rgba(74, 59, 40, 0.1);
+    border-radius: 6px;
+    z-index: 1000;
+  }
+  .post-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a3b28;
+    margin: 0 0 0.25rem 0;
+  }
+  .date {
+    font-size: 0.85rem;
+    color: #5a4328;
+    margin-bottom: 1rem;
+  }
+  summary {
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    color: #4a3b28;
+    padding: 0.5rem 0;
+    user-select: none;
+  }
+  summary:hover {
+    color: #5a4328;
+  }
+  details[open] .blog-content {
+    margin-top: 1rem;
+    max-height: 75vh;
+    overflow-y: auto;
+    font-size: 1rem;
+  }
+  .blog-content {
+    margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  p {
+    margin: 1rem 0;
+    color: #4a3b28;
+  }
+  .blog-content img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(74, 59, 40, 0.1);
+    border: 1.5px solid #a3b18a;
+    background: #a3b18a;
+  }
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+  }
+  .blog-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  .blog-content::-webkit-scrollbar-thumb {
+    background-color: #7a5c3b;
+    border-radius: 4px;
+  }
+  .posts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1900px;
+  }
+  iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15);
+    border: 1.5px solid #a3b18a;
+    background: #a3b18a;
+  }
+  a {
+    color: #7a5c3b;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #5a4328;
+    text-decoration: underline;
+  }
+   /* ===== Home Button Styling ===== */
+    
+  .home-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #a3b18a; /* same pastel green */
+  color: #4a3b28; /* dark brown text */
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1.5px solid #5a4328; /* same border as download buttons */
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.home-button:hover {
+  background-color: #5a4328; /* darker brown on hover */
+  color: #f7f4ea; /* off-white text */
+  border-color: #3b2d1f;
+}
+
+  </style>
+</head>
+  <!-- Inside <body> -->
+<button class="home-button" onclick="window.location.replace('https://33bree3.github.io/fortpolio/')">Home</button>
+
+<body>
+<audio class="audio-placeholder" controls>
+  <source src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/sample_audio.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<header> Hold Tight </header>
+
+<div class="posts-wrapper">
+
+  <div class="post-container">
+    <h1 class="post-title">Hip Hop or House?</h1>
+    <div class="date">Posted on July 17, 2025</div>
+
+    <details>
+      <summary>Read Full Analysis</summary>
+      <div class="blog-content">
+
+        <p>This project explores the sonic and cultural distinctions between Hip Hop and House music—two genres with shared DNA but unique identities. Both heavily rely on digital sampling of existing music, with live instrumentation being a rarity outside of performances. It’s common to find hip hop producers sampling house beats, and electronic artists using hip hop vocals or basslines. These elements often serve as creative foundations or accents within a broader composition.</p>
+
+        <p>Despite occasional overlap, each genre contains a wide array of subgenres that blur stylistic boundaries. To draw distinctions, I considered not only production methods but also the cultural values that shaped each sound.</p>
+
+        <p>Hip Hop, as a cultural movement, encompasses MCing (rapping), DJing, breakdancing, and graffiti. A key distinction is the prominence of the MC—lyrics are central. The voice carries meaning, emotion, and narrative. Conversely, House music, rooted in club culture and popularized in venues like Paradise Garage by figures like Larry Levan, prioritized rhythm, inclusivity, and the dance floor over lyrical storytelling.</p>
+
+        <p>In production terms, House often favors stripped-back arrangements with emphasis on groove and atmosphere. Vocals are optional and frequently processed into textures. Hip hop, on the other hand, prioritizes vocal clarity, which limits how much processing can occur without compromising intelligibility. This difference is evident in spectral characteristics.</p>
+
+        <h2>Recording Methodology</h2>
+        <p>All audio clips were digitized from vinyl using a mixer and interface, then captured in Ableton Live at 44.1kHz, 16-bit resolution. As analog recordings, surface noise—clicks, pops, and groove inconsistencies—was expected. These artifacts are visible in the waveform data but don’t meaningfully affect analysis.</p>
+
+        <p>Clips were selected to represent each genre from my personal perspective. To challenge the classifier, I included edge cases—instrumental hip hop tracks to reduce vocal bias, and vocal-heavy house tracks to test beyond rhythmic features. Certain Kanye West songs were included for their compressed, almost house-like qualities.</p>
+
+        <h2>Analysis Parameters</h2>
+        <p><strong>Spectral Flatness</strong><br>
+        Flatness measures how noise-like a signal is. High flatness suggests white-noise characteristics—a flat response across frequency bands. Low flatness indicates tonal content, such as sine waves. House music often shows higher flatness due to its percussive, noise-rich textures.</p>
+
+        <p><strong>Entropy</strong><br>
+        Spectral entropy quantifies the “peakiness” of a signal and helps identify vocal formants. It’s commonly used in voice activity detection. Here, it highlights vocal vs. instrumental sections by identifying structured formants versus erratic noise responses.</p>
+
+        <p><strong>Brightness</strong><br>
+        Brightness refers to the concentration of high-frequency energy. House music, with roots in disco, often features bright synths and glistening textures. Hip hop, by contrast, tends toward lower frequencies, gritty vocals, and bass-heavy mixes.</p>
+
+        <p><strong>Pulse Clarity</strong><br>
+        This measures rhythmic predictability. House music’s four-on-the-floor beat typically yields high pulse clarity. Hip hop, more rhythmically varied due to layered vocals and syncopated beats, often results in lower clarity.</p>
+
+        <p><strong>Root Mean Square (RMS)</strong><br>
+        RMS measures average loudness over time. While House is perceived as louder, this may relate more to playback context (clubs, festivals) than production. Measuring RMS helps explore whether that perception holds true technically.</p>
+
+        <h2>Results</h2>
+
+        <p><strong>Flatness vs. Entropy</strong></p>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_a.png" alt="Flatness vs Entropy Scatter Plot" />
+        <p>Figure A shows that Hip Hop and House tracks occupy similar regions in flatness and entropy. Notable outliers include:</p>
+        <ul>
+          <li>‘Babasonic.wav’ (1,7) – drastically lower flatness and entropy, likely due to being part of a breakdown.</li>
+          <li>‘C.R.E.A.M (2).wav’ (2,33)– low-vocal outro, closest neighbour to low scoring house track ‘Babasonic’.</li>
+          <li>‘Money Trees.wav’ (Hip Hop) – high entropy and flatness due to continuous vocals and noise-like instrumentation.</li>
+        </ul>
+        <p>These comparisons show both genres can fluctuate between noise-like and tonal depending on the song segment.</p>
+
+        <h2>Spectral Flatness (Detailed Visuals)</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_b.png" alt="Spectral Flatness Detailed Visuals" />
+        <p>The flatness visuals for two clips—‘Money Trees’ (Hip Hop) and ‘Please Forgive Me’ (House)—offer a clearer comparison than scatter plots, showing distinct peaks and troughs. ‘Money Trees’ displays pronounced peakiness, while ‘Please Forgive Me’ features a flatter response.</p>
+
+        <h2>Entropy Detail</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_c.png" alt="Entropy Detail Visualization" />
+        <p>Figure C helps distinguish vocal formants presence. ‘C.R.E.A.M’ (Hip Hop) shows entropy peak before 4 seconds, separating vocal from instrumental content. ‘Funky Introductions’ (House) shows a steady pattern without sharp peaks, indicating absence of vocal formants.</p>
+
+        <h2>Pulse Clarity vs RMS</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_d.png" alt="Pulse Clarity vs RMS Plot" />
+        <p>Figure D illustrates pulse clarity and average loudness (RMS). Two Hip Hop outliers: Kanye West’s ‘Gorgeous’ (2.37) and Kendrick Lamar’s ‘Duckworth’ (2.34). ‘Gorgeous’ reflects modern compression with loud, polished sound. ‘Duckworth’ has lower RMS, aligning with its intimate narrative style.</p>
+
+        <h2>Brightness and Pulse Clarity</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_e.png" alt="Brightness and Pulse Clarity Data" />
+        <p>Figure E shows Hip Hop tracks cluster centrally, House tracks higher and right—brighter and rhythmically clearer. This fits House’s minimal structure and Hip Hop’s layered vocal complexity.</p>
+
+        <h2>Mean Parameter Values</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_f.png" alt="Mean Parameter Values Plot" />
+        <p>Figure F shows average parameter values almost identical across genres except pulse clarity, which stands out. Hip Hop is layered with dense vocals/instrumentation; House features minimal arrangements.</p>
+
+        <h2>Areas of Training and Further Findings</h2>
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_g.png" alt="Classifier Female Vocals Test" />
+        <p>Figure G tests classifier on female vocals absent in training. Correctly identifies ‘into_you.wav’ as Hip Hop, with entropy and RMS above average, brightness, pulse clarity, and flatness near or below average.</p>
+
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_h.png" alt="Compressed Track Test" />
+        <p>Figure H shows a heavily compressed track, with elevated entropy and RMS, lower pulse clarity, brightness, and flatness, matching gritty, processed sound. Classified as Hip Hop correctly.</p>
+
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_i.png" alt="Instrumental Clip Test" />
+        <p>Figure I, instrumental clip tests classifier robustness without vocals. Similar to Hip Hop average RMS and pulse clarity but lower brightness.</p>
+
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_j.png" alt="Tokyo.wav Clip Analysis" />
+        <p>Figure J’s ‘tokyo.wav’ clip shows higher RMS and pulse clarity with similar other parameters, typical for four-on-the-floor rhythm and airy vocal overlay.</p>
+
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_k.png" alt="Boundary House/Techno Track" />
+        <p>Figure K tests classifier with borderline house/techno track, showing flatter response and higher loudness but lower brightness.</p>
+
+        <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_l.png" alt="Misclassified House Track" />
+        <p>Figure L shows a misclassified house track identified as Hip Hop, likely due to tonal qualities and evolving vocals. Lower pulse clarity despite simple instrumentation may have confused the classifier.</p>
+
+        <h2>Project Summary</h2>
+        <p>This project examined acoustic and structural distinctions between Hip Hop and House through analysis of audio features: RMS, entropy, pulse clarity, brightness, and flatness. Visualizations revealed shared traits and key differences.</p>
+
+        <h3>Key Differences:</h3>
+        <ul>
+          <li><strong>Acoustic Texture:</strong> Hip Hop has higher peakiness and entropy, reflecting layered vocals and dynamic instrumentation.</li>
+          <li><strong>Tonality and Structure:</strong> House features flatter spectral responses, lower entropy, and higher pulse clarity consistent with minimal arrangements.</li>
+          <li><strong>Loudness and Dynamics:</strong> Hip Hop’s vocals give wider dynamic range; House maintains steadier loudness.</li>
+        </ul>
+
+        <h3>Similarities:</h3>
+        <ul>
+          <li>Both share overlapping frequency ranges and rhythmic roots.</li>
+          <li>Instrumentation overlaps in sampled basslines and drums but with different usage.</li>
+        </ul>
+
+        <h3>Cultural and Creative Context:</h3>
+        <p>Hip Hop emphasizes storytelling and vocal presence; House leans into danceable grooves and atmosphere. The genres influence each other while retaining identities. This analysis shows how acoustic parameters mirror cultural distinctions but also highlights challenges in computational genre classification.</p>
+
+      </div>
+    </details>
+  </div>
+
+<div class="post-container">
+  <h1 class="post-title">The Glass Harmonica</h1>
+  <div class="date">Posted on March 12, 2025</div>
+  <details>
+    <summary>View PDF Analysis</summary>
+    <div class="blog-content">
+
+      <!-- Zoom controls -->
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <button id="zoom-out" type="button" style="margin-right: 0.5rem;">- Zoom Out</button>
+        <button id="zoom-in" type="button" style="margin-right: 0.5rem;">+ Zoom In</button>
+        <button id="zoom-reset" type="button">Reset</button>
+      </div>
+
+      <!-- PDF container for scaling -->
+      <div id="pdf-container" style="overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(46, 38, 22, 0.15);">
+        <iframe
+          id="pdf-viewer"
+          src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf&embedded=true"
+          style="width: 100%; height: 800px; border: none; transform-origin: top left;"
+          title="PDF Analysis"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <p style="margin-top: 1rem;">
+        <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf" target="_blank" rel="noopener" style="color: #5a5032; font-weight: bold;">
+          Download Full PDF
+        </a>
+      </p>
+    </div>
+  </details>
+</div>
+
+<script>
+  // Zoom functionality script
+  (function() {
+    const pdfViewer = document.getElementById('pdf-viewer');
+    let scale = 1;
+
+    document.getElementById('zoom-in').addEventListener('click', () => {
+      scale = Math.min(scale + 0.1, 3);
+      pdfViewer.style.transform = `scale(${scale})`;
+    });
+
+    document.getElementById('zoom-out').addEventListener('click', () => {
+      scale = Math.max(scale - 0.1, 0.5);
+      pdfViewer.style.transform = `scale(${scale})`;
+    });
+
+    document.getElementById('zoom-reset').addEventListener('click', () => {
+      scale = 1;
+      pdfViewer.style.transform = `scale(${scale})`;
+    });
+  })();
+</script>
+
+
+  
+  
+  
