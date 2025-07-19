@@ -473,6 +473,25 @@
     </p>
   </div>
 </details>
+
+  <script>
+  // Track zoom level for each viewer by ID
+  const zoomLevels = {};
+
+  function zoomDoc(id, action) {
+    const iframe = document.getElementById(id);
+    if (!iframe) return;
+
+    if (!(id in zoomLevels)) zoomLevels[id] = 1;
+
+    if (action === 'in') zoomLevels[id] = Math.min(zoomLevels[id] + 0.1, 3);
+    if (action === 'out') zoomLevels[id] = Math.max(zoomLevels[id] - 0.1, 0.5);
+    if (action === 'reset') zoomLevels[id] = 1;
+
+    iframe.style.transform = `scale(${zoomLevels[id]})`;
+  }
+</script>
+
      
   </div> <!-- End .posts-wrapper -->
 
