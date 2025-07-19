@@ -337,14 +337,12 @@
 
 
 
-  
 <div class="post-container">
   <h1 class="post-title">Magnetic Synth Teaching Tool</h1>
   <div class="date">Posted on January 5, 2025</div>
 
-  <!--  Separate tab for YouTube video -->
   <details>
-    <summary> Watch Video</summary>
+    <summary>Watch Video</summary>
     <div class="blog-content">
       <iframe 
         src="https://www.youtube.com/embed/SCYp1EsZRVA?si=op7eaLCLp5uZa8t-" 
@@ -354,45 +352,38 @@
     </div>
   </details>
 
-<!--  View Document (with Zoom) -->
-<details>
-  <summary> View Document</summary>
-  <div class="blog-content">
-    <div class="zoom-controls">
-      <button onclick="zoomDoc('doc-viewer-2', 'in')">+</button>
-      <button onclick="zoomDoc('doc-viewer-2', 'out')">−</button>
-      <button onclick="zoomDoc('doc-viewer-2', 'reset')">Reset</button>
+  <details>
+    <summary>View Document</summary>
+    <div class="blog-content">
+      <div class="zoom-controls">
+        <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
+        <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
+        <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
+      </div>
+      <div class="pdf-wrapper">
+        <iframe
+          id="doc-viewer-3"
+          src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx&embedded=true"
+          title="AAI Document Viewer">
+        </iframe>
+      </div>
+      <p>
+        <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx" target="_blank">
+          Download Full Document
+        </a>
+      </p>
     </div>
-    <div class="pdf-wrapper">
-      <iframe
-        id="doc-viewer-2"
-        src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx&embedded=true"
-        title="CCAV Document Viewer">
-      </iframe>
-    </div>
-    <p>
-      <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx" target="_blank">
-        Download Full Document
-      </a>
-    </p>
-  </div>
-</details>
-  </div> 
-
-  
+  </details>
+</div>
 
 <!-- === UPDATED BLOG POST: Converging Tech for AV === -->
 
-  
-  
-<div class="post-container">
+  <div class="post-container">
   <h1 class="post-title">Converging Tech for AV</h1>
   <div class="date">Posted on September 20, 2024</div>
 
-  <!--  Separate tab for YouTube video -->
-  
   <details>
-    <summary> Watch Video</summary>
+    <summary>Watch Video</summary>
     <div class="blog-content">
       <iframe 
         src="https://www.youtube.com/embed/-lNruqGbjkQ?si=TX6E50Bh8wtyCiG1" 
@@ -402,39 +393,33 @@
     </div>
   </details>
 
-  <!--  Separate tab for document viewer -->
-  
-  <!--  View Document (with Zoom) -->
-<details>
-  <summary> View Document</summary>
-  <div class="blog-content">
-    
-    <!--  Zoom Buttons -->
-    <div style="text-align: center; margin-bottom: 1rem;">
-        <button id="zoom-out" type="button" style="margin-right: 0.5rem;">- Zoom Out</button>
-        <button id="zoom-in" type="button" style="margin-right: 0.5rem;">+ Zoom In</button>
-        <button id="zoom-reset" type="button">Reset</button>
+  <details>
+    <summary>View Document</summary>
+    <div class="blog-content">
+      <div class="zoom-controls">
+        <button onclick="zoomDoc('doc-viewer-4', 'in')">+</button>
+        <button onclick="zoomDoc('doc-viewer-4', 'out')">−</button>
+        <button onclick="zoomDoc('doc-viewer-4', 'reset')">Reset</button>
       </div>
-
-
-    <!--  Wrapper div around iframe -->
-    <div class="pdf-wrapper">
-      <iframe
-        id="doc-viewer-1"
-        src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"
-        title="AAI Document Viewer">
-      </iframe>
+      <div class="pdf-wrapper">
+        <iframe
+          id="doc-viewer-4"
+          src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"
+          title="CTAV Document Viewer">
+        </iframe>
+      </div>
+      <p>
+        <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx" target="_blank">
+          Download Full Document
+        </a>
+      </p>
     </div>
+  </details>
+</div>
 
-    <p>
-      <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx" target="_blank">
-        Download Full Document
-      </div>
-</details>
-  </div> 
+  
      
-  <script>
-  // Track zoom level for each viewer by ID
+ <script>
   const zoomLevels = {};
 
   function zoomDoc(id, action) {
@@ -448,10 +433,10 @@
     if (action === 'reset') zoomLevels[id] = 1;
 
     iframe.style.transform = `scale(${zoomLevels[id]})`;
+    iframe.style.transformOrigin = '0 0';
   }
 </script>
 
-     
   </div> <!-- End .posts-wrapper -->
 
 </body>
