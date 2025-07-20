@@ -67,28 +67,44 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Image Container Styling */
-    .image-container {
-      display: flex;
-      justify-content: center; /* Align images to the middle */
-      align-items: center;
-      margin-top: 3rem;
-      margin-bottom: 3rem; /* Space between images and rest of the page */
-      padding: 1rem; /* Space on sides of container */
-    }
+    <style>
+    
+  /* Image Container Styling */
+    
+  .image-container {
+    position: relative; /* Make the container a positioning context for images */
+    margin-top: 3rem;
+    margin-bottom: 3rem; /* Space between images and rest of the page */
+    padding: 1rem; /* Space on sides of container */
+    text-align: center; /* Ensure container itself is centered */
+  }
 
-    .image-container img {
-      width: 250px;
-      height: auto;
-      margin-right: 333px; /* Increased space between images */
-      border-radius: 10px;
-    }
+  .image-container img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    position: absolute; /* Position images outside the container */
+    top: 0; /* Align images with the top of the container */
+  }
 
-    .mirrored {
-      transform: scaleX(-1);
-    }
+  .image-container img:first-child {
+    left: -150px; /* Move the first image outside the left side */
+  }
+
+  .image-container img:last-child {
+    right: -150px; /* Move the second image outside the right side */
+    transform: scaleX(-1); /* Mirror the second image */
+  }
+
+  /* Ensure navbar is not affected by image positioning */
+  nav {
+    z-index: 1; /* Make sure the navbar stays on top */
+  }
+</style>
+
 
     /* Header Section (Welcome to Creative Portfolio and Video) */
+  <style>
     header {
       background-color: #a3b18a;
       padding: 2rem;
