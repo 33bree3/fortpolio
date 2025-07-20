@@ -180,8 +180,103 @@
       font-size: 16px;
       border-radius: 4px;
     }
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Post - Hold Tight</title>
+  <style>
+    /* Keep your existing styles here */
+    body {
+      background-color: #7a5c3b;
+      color: #4a3b28;
+      font-family: 'Georgia', serif;
+      margin: 2rem;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header-box {
+      background-color: #a3b18a; /* Matches your post-container background */
+      border-radius: 8px; /* Matches your post-container border radius */
+      padding: 1.5rem 2rem; /* Padding to match spacing inside your blog post containers */
+      box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15); /* Same box shadow as your post-container */
+      width: 50%; /* Sets the width to half the container */
+      text-align: center; /* Centers the header title inside the box */
+      margin: 0 auto; /* Centers the header box horizontally */
+      margin-bottom: 2rem; /* Adds space below the header box */
+      min-width: 300px; /* Keeps it responsive, won't shrink too much */
+    }
+
+    /* Other existing styles for buttons, links, and general layout here... */
+
+    /* --------------------------------------------- */
+    
+    /* Insert the new/updated styles below this point */
+    
+    /* Ensure no horizontal overflow in post container */
+    .post-container {
+      overflow-x: hidden; /* Prevent horizontal overflow */
+      max-width: 900px;    /* Ensure the width doesn't exceed the limit */
+      margin-bottom: 2rem;
+      min-width: 300px;
+    }
+
+    /* Fix for YouTube video iframe to avoid overflow */
+    .video-container iframe {
+      max-width: 100%;    /* Ensures the iframe fits within its container */
+      height: auto;       /* Ensures the aspect ratio is preserved */
+    }
+
+    /* Ensures no overflow in the PDF wrapper */
+    .pdf-wrapper iframe {
+      max-width: 100%;    /* Prevents horizontal overflow */
+      height: 500px;      /* Adjusts the height of the iframe */
+    }
+
+    /* Fix for content inside details section */
+    details[open] .blog-content {
+      margin-top: 1rem;
+      max-height: 75vh;   /* Prevents content from overflowing vertically */
+      overflow-y: auto;   /* Enables vertical scrolling */
+      font-size: 1rem;
+      overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+
+    /* Additional fix for zoom controls and PDF viewer iframe */
+    .pdf-wrapper {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Ensures the zoomed content stays within bounds */
+    .zoom-controls button {
+      background-color: #5a4328;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    /* Ensure that the video container fits within the content */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin-top: 10px;
+      width: 100%;   /* Ensures the container width is restricted */
+    }
   </style>
 </head>
+
 
 <body>
 
