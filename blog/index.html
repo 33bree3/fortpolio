@@ -16,19 +16,21 @@
       align-items: center;
     }
    
-  .header-box {
-  background-color: #a3b18a; /* Matches your post-container background */
-  border-radius: 8px; /* Matches your post-container border radius */
-  padding: 1.5rem 2rem; /* Padding to match spacing inside your blog post containers */
-  box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15); /* Same box shadow as your post-container */
-  width: 21%; /* Sets the width to half the container */
-  text-align: center; /* Centers the header title inside the box */
-  margin: 0 auto; /* Centers the header box horizontally */
-  margin-bottom: 2rem; /* Adds space below the header box */
-  min-width: 300px; /* Keeps it responsive, won't shrink too much */
-}
+    /* --- Header Box Styling --- */
+    .header-box {
+      background-color: #a3b18a; /* Matches your post-container background */
+      border-radius: 8px; /* Matches your post-container border radius */
+      padding: 1rem 1.5rem; /* Adjust the padding to reduce space */
+      box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15); /* Same box shadow as your post-container */
+      width: 50vw; /* Use 50% of viewport width */
+      max-width: 600px; /* Set a max width for larger screens */
+      text-align: center; /* Centers the header title inside the box */
+      margin: 0 auto; /* Centers the header box horizontally */
+      margin-bottom: 2rem; /* Adds space below the header box */
+      min-width: 250px; /* Prevents it from shrinking too much on small screens */
+    }
 
-
+    /* --- Home Button Styling --- */
     .home-button {
       position: fixed;
       top: 1rem;
@@ -47,12 +49,14 @@
       transition: all 0.3s ease;
       z-index: 1000;
     }
+
     .home-button:hover {
       background-color: #5a4328;
       color: #f7f4ea;
       border-color: #3b2d1f;
     }
 
+    /* --- Posts Wrapper --- */
     .posts-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -62,6 +66,7 @@
       max-width: 1900px;
     }
 
+    /* --- Post Container --- */
     .post-container {
       background-color: #a3b18a;
       border-radius: 8px;
@@ -73,6 +78,7 @@
       min-width: 300px;
     }
 
+    /* --- Post Title Styling --- */
     .post-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -80,12 +86,14 @@
       margin: 0 0 0.25rem 0;
     }
 
+    /* --- Date Styling --- */
     .date {
       font-size: 0.85rem;
       color: #5a4328;
       margin-bottom: 1rem;
     }
 
+    /* --- Summary Styling --- */
     summary {
       font-size: 1.2rem;
       font-weight: 700;
@@ -99,10 +107,11 @@
       color: #5a4328;
     }
 
+    /* --- Blog Content (inside details) --- */
     details[open] .blog-content {
       margin-top: 1rem;
-      max-height: 75vh; /* Ensure it doesn't overflow the page */
-      overflow-y: auto; /* Enables scrolling only within content */
+      max-height: none; /* No scroll in the post */
+      overflow-y: hidden; /* Disable scroll here */
       font-size: 1rem;
     }
 
@@ -113,13 +122,14 @@
       transition: max-height 0.3s ease;
     }
 
-    /* Fix for YouTube video size */
+    /* --- Fix for YouTube Video Size --- */
     .video-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
       margin-top: 10px;
+      width: 100%;
     }
 
     .video-container iframe {
@@ -127,35 +137,20 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 400px; /* Fixed height for the video */
       border-radius: 8px;
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      margin-top: 1rem;
       box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15);
       border: 1.5px solid #a3b18a;
       background: #a3b18a;
     }
 
-    a {
-      color: #7a5c3b;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #5a4328;
-      text-decoration: underline;
-    }
-
+    /* --- Fix for PDF Viewer --- */
     .pdf-wrapper {
-      overflow: hidden;
+      overflow: auto; /* Enables scroll only in the PDF */
+      max-height: 500px;
       display: flex;
       justify-content: center;
+      margin-top: 1rem; /* Space between video and PDF */
     }
 
     .pdf-wrapper iframe {
@@ -165,6 +160,7 @@
       height: 500px;
     }
 
+    /* --- Zoom Controls Styling --- */
     .zoom-controls {
       display: flex;
       gap: 10px;
@@ -180,12 +176,54 @@
       font-size: 16px;
       border-radius: 4px;
     }
-    
-    
-    /* fix for halfed youtube videos and squashed stuff */
 
+    /* --- Links Styling --- */
+    a {
+      color: #7a5c3b;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
+    a:hover {
+      color: #5a4328;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
 <body>
+  <div class="header-box">
+    <h1 class="post-title">Magnetic Synth Teaching Tool</h1>
+  </div>
+
+  <div class="posts-wrapper">
+    <div class="post-container">
+      <h2 class="post-title">Magnetic Synth Teaching Tool</h2>
+      <div class="date">Posted on June 30, 2025</div>
+      <details>
+        <p><a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx" target="_blank">Download PDF</a></p>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/SCYp1EsZRVA?si=op7eaLCLp5uZa8t-" allowfullscreen></iframe>
+        </div>
+
+        <summary>View Study</summary>
+        <div class="blog-content">
+          <div class="zoom-controls">
+            <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
+          </div>
+          <div class="pdf-wrapper">
+            <iframe id="doc-viewer-3" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx&embedded=true"></iframe>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</body>
+</html>
 
   <!-- Home Button -->
   <button class="home-button" onclick="window.location.replace('https://33bree3.github.io/fortpolio/')">Home</button>
