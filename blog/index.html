@@ -340,12 +340,12 @@
         <summary>View Study</summary>
         <div class="blog-content">
           <div class="zoom-controls">
-            <button onclick="zoomDoc('doc-viewer-2', 'in')">+</button>
-            <button onclick="zoomDoc('doc-viewer-2', 'out')">−</button>
-            <button onclick="zoomDoc('doc-viewer-2', 'reset')">Reset</button>
+            <button onclick="zoomDoc('doc-viewer-1', 'in')">+</button>
+            <button onclick="zoomDoc('doc-viewer-1', 'out')">−</button>
+            <button onclick="zoomDoc('doc-viewer-1', 'reset')">Reset</button>
           </div>
           <div class="pdf-wrapper">
-            <iframe id="doc-viewer-2" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf&embedded=true"></iframe>
+            <iframe id="doc-viewer-1" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf&embedded=true"></iframe>
           </div>
         </div>
       </details>
@@ -420,12 +420,12 @@
       <!-- CREATE DOCUMENT VIEW -->
       <div class="blog-content">
         <div class="zoom-controls">
-          <button onclick="zoomDoc('doc-viewer-2', 'in')">+</button>
-          <button onclick="zoomDoc('doc-viewer-2', 'out')">−</button>
-          <button onclick="zoomDoc('doc-viewer-2', 'reset')">Reset</button>
+          <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
+          <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
+          <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
         </div>
         <div class="pdf-wrapper">
-          <iframe id="doc-viewer-2" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"></iframe>
+          <iframe id="doc-viewer-3" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"></iframe>
         </div>
       </div>
 
@@ -434,20 +434,25 @@
 </div>
 
 
-  <script>
+ <script>
     function zoomDoc(docId, action) {
-      const iframe = document.getElementById(docId);
-      let currentScale = iframe.style.transform ? parseFloat(iframe.style.transform.match(/scale\((.*?)\)/)[1]) : 1;
+        const iframe = document.getElementById(docId);
+        if (!iframe) return;
 
-      if (action === 'in') {
-        iframe.style.transform = `scale(${currentScale + 0.1})`;
-      } else if (action === 'out') {
-        iframe.style.transform = `scale(${Math.max(currentScale - 0.1, 0.5)})`;
-      } else {
-        iframe.style.transform = 'scale(1)';
-      }
+        let currentScale = iframe.style.transform ? parseFloat(iframe.style.transform.match(/scale\((.*?)\)/)[1]) : 1;
+
+        // Handle zoom in, zoom out, or reset
+      
+        if (action === 'in') {
+            iframe.style.transform = `scale(${currentScale + 0.1})`;
+        } else if (action === 'out') {
+            iframe.style.transform = `scale(${Math.max(currentScale - 0.1, 0.5)})`; // Prevent zoom out below 50%
+        } else {
+            iframe.style.transform = 'scale(1)'; // Reset zoom to default size
+        }
     }
-  </script>
+</script>
+
 
 </body>
 </html>
