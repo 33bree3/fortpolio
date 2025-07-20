@@ -8,29 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
   
   <style>
-    /* Styling for the container to align the images */
-    .image-container {
-      display: flex;
-      justify-content: space-between; /* Push images to the edges with space in between */
-      margin-top: 2rem;
-      margin-left: 20px; /* Ensure the images are near the left edge */
-      margin-right: 20px; /* Ensure the images are near the right edge */
-    }
-
-    /* Styling for the individual images */
-    .image-container img {
-      width: 250px; /* Adjust the size of the image */
-      height: auto;
-      margin: 0 20px; /* Space between the images */
-      border-radius: 10px;
-    }
-
-    /* Mirroring effect for the second image */
-    .mirrored {
-      transform: scaleX(-1); /* Flips the image horizontally */
-    }
-
-    /* Base body styling */
+    /* Global Styles */
     body {
       font-family: 'Quicksand', sans-serif;
       margin: 0;
@@ -39,28 +17,24 @@
       color: #4a3b28; /* dark earthy brown text */
     }
 
-    /* Container centers content with max width and padding */
     .container {
-      max-width: 1200px; /* Adjust container width */
+      max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
-    /* Navigation bar styling */
+    /* Navigation Bar Styling */
     nav {
-      background-color: #a3b18a; /* pastel green */
+      background-color: #a3b18a;
       padding: 1rem 0;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
       text-align: center;
-      margin-bottom: 2rem; /* Add margin to separate from content */
-      max-width: 900px; /* Limit width of the nav bar */
-      margin: 0 auto; /* Center the nav bar */
+      margin-bottom: 2rem;
     }
 
-    /* Navigation links */
     nav a {
-      color: #4a3b28; /* dark earthy brown */
+      color: #4a3b28;
       text-decoration: none;
       font-weight: 600;
       margin: 0 15px;
@@ -68,68 +42,52 @@
       transition: color 0.3s ease;
     }
 
-    /* Hover effect on navigation links */
     nav a:hover {
       color: #5a4328;
       text-decoration: underline;
     }
 
-    /* Sections styling (header, section, footer) */
-    header, section, footer {
-      background-color: #a3b18a; /* pastel green */
+    /* Section Styling */
+    section {
+      background-color: #a3b18a;
       padding: 2rem;
-      margin-bottom: 3rem; /* Increase bottom margin for better vertical spacing */
+      margin-bottom: 2rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(122, 92, 59, 0.3);
       text-align: center;
       color: #4a3b28;
-      max-width: 900px; /* Limit width of all sections */
-      margin: 0 auto; /* Center the sections */
     }
 
-    /* Headings inside sections */
-    h1, h2, h3 {
-      color: #4a3b28;
-      margin-top: 0;
+    section h2 {
+      margin-bottom: 1rem;
       font-weight: 600;
     }
 
-    /* Paragraph and strong text styling */
-    p, strong {
-      color: #4a3b28;
+    section p {
+      margin-bottom: 1.5rem;
     }
 
-    /* Links inside sections */
-    section a {
-      color: #7a5c3b;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
+    /* Image Container Styling */
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding: 0 2rem; /* Space on sides of container */
     }
 
-    section a:hover {
-      color: #5a4328;
-      text-decoration: underline;
-    }
-
-    /* Images and iframes */
-    img, iframe {
-      max-width: 100%;
+    .image-container img {
+      width: 250px;
       height: auto;
-      display: block;
-      margin: 1rem auto;
+      margin: 0 15px; /* Space between images */
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(122, 92, 59, 0.15);
-      border: 1.5px solid #a3b18a;
-      background: #a3b18a;
     }
 
-    /* Preview container text alignment */
-    .preview {
-      text-align: center;
+    .mirrored {
+      transform: scaleX(-1);
     }
 
-    /* Buttons styling */
+    /* Button Styling */
     button {
       padding: 10px 20px;
       background-color: #7a5c3b;
@@ -146,11 +104,37 @@
       background-color: #5a4328;
     }
 
-    /* Footer styling */
+    /* Footer Styling */
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #4a3b28;
+      margin-top: 3rem;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .image-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-container img {
+        margin: 10px 0;
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
     }
 
   </style>
@@ -159,25 +143,19 @@
 <body>
 
   <div class="container">
-
-    <!-- Navigation bar with links to all main pages -->
+    <!-- Navigation Bar -->
     <nav>
       <a href="visual/index.html">Visuals</a>
       <a href="games/index.html">Games</a>
       <a href="audio/index.html">Audio</a>
-      <!-- Changed blog link to point to blog folder -->
       <a href="blog/index.html">Blog</a>
     </nav>
 
-    <!-- Header Section: Welcome message -->
+    <!-- Header Section -->
     <header>
       <h1>Welcome to My Creative Portfolio</h1>
-      <p> Experience my struggle first-hand </p>
-       
+      <p>Experience my struggle first-hand</p>
       <p>!!! and stay up to date with the weekly anthe !!!</p>
-        
-    <!-- video preview Section -->  
-         
       <div class="preview">
         <iframe
           width="560"
@@ -188,32 +166,33 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
-       
+      </div>
     </header>
 
     <!-- Visual Projects Section -->
     <section id="visuals">
-      <h2><a href="visual/index.html"> Visual Projects</a></h2>
+      <h2><a href="visual/index.html">Visual Projects</a></h2>
       <p>A collection of renderings, artwork, and sketches.</p>
-      <div class="preview">
-        <img src="visual/placeholder-visual.JPG" alt="Visual Preview" />
-        <p></strong> Dreamworld </p>
+      
+      <!-- Image Container for bboy.png -->
+      <div class="image-container">
+        <img src="bboy.png" alt="Bboy Image" />
+        <img src="bboy.png" alt="Mirrored Bboy Image" class="mirrored" />
       </div>
     </section>
 
     <!-- Game Projects Section -->
     <section id="games">
-      <h2><a href="games/index.html"> Game Projects</a></h2>
+      <h2><a href="games/index.html">Game Projects</a></h2>
       <p>Playable demos, trailers, and downloadable files from my games.</p>
-       <div class="preview">
-        <img src="visual/lowend.png" alt="Visual Preview" />
-         
+      <div class="preview">
+        <img src="visual/lowend.png" alt="Game Preview" />
       </div>
     </section>
 
     <!-- Audio Projects Section -->
     <section id="audio">
-      <h2><a href="audio/index.html"> Audio Projects</a></h2>
+      <h2><a href="audio/index.html">Audio Projects</a></h2>
       <p>Ambience, sound effects, and media soundtracks.</p>
       <div class="preview">
         <button onclick="alert('Go to Audio Projects page!')">▶ Listen to Samples</button>
@@ -222,11 +201,8 @@
 
     <!-- Blog Section -->
     <section id="blog">
-      <h2><a href="blog/index.html"> My Blog</a></h2> <!-- Updated link -->
+      <h2><a href="blog/index.html">My Blog</a></h2>
       <p>Read my thoughts, updates, and articles.</p>
-      <div class="preview">
-        
-      </div>
     </section>
 
     <!-- Footer Section -->
@@ -234,5 +210,6 @@
       <p>© Bree's Wonder Emporium 2025.</p>
     </footer>
   </div>
+
 </body>
 </html>
