@@ -46,16 +46,7 @@
       color: #f7f4ea;
       border-color: #3b2d1f;
     }
-    .audio-placeholder {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      width: 200px;
-      max-width: 40vw;
-      box-shadow: 0 2px 6px rgba(74, 59, 40, 0.1);
-      border-radius: 6px;
-      z-index: 1000;
-    }
+
     .posts-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -64,6 +55,7 @@
       width: 100%;
       max-width: 1900px;
     }
+
     .post-container {
       background-color: #a3b18a;
       border-radius: 8px;
@@ -74,17 +66,20 @@
       margin-bottom: 2rem;
       min-width: 300px;
     }
+
     .post-title {
       font-size: 1.8rem;
       font-weight: 700;
       color: #4a3b28;
       margin: 0 0 0.25rem 0;
     }
+
     .date {
       font-size: 0.85rem;
       color: #5a4328;
       margin-bottom: 1rem;
     }
+
     summary {
       font-size: 1.2rem;
       font-weight: 700;
@@ -93,24 +88,45 @@
       padding: 0.5rem 0;
       user-select: none;
     }
+
     summary:hover {
       color: #5a4328;
     }
+
     details[open] .blog-content {
       margin-top: 1rem;
-      max-height: 75vh;
-      overflow-y: auto;
+      max-height: 75vh; /* Ensure it doesn't overflow the page */
+      overflow-y: auto; /* Enables scrolling only within content */
       font-size: 1rem;
     }
+
     .blog-content {
       margin-top: 1rem;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
     }
+
+    /* Fix for YouTube video size */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
     iframe {
       width: 100%;
-      height: 800px;
       border: none;
       border-radius: 8px;
       margin-top: 1rem;
@@ -118,45 +134,46 @@
       border: 1.5px solid #a3b18a;
       background: #a3b18a;
     }
+
     a {
       color: #7a5c3b;
       font-weight: bold;
       text-decoration: none;
     }
+
     a:hover {
       color: #5a4328;
       text-decoration: underline;
     }
-.pdf-wrapper {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
 
-.pdf-wrapper iframe {
-  transform-origin: top center;
-  transition: transform 0.2s ease-in-out;
-  width: 100%;
-  height: 500px;
-}
+    .pdf-wrapper {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
 
-.zoom-controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
+    .pdf-wrapper iframe {
+      transform-origin: top center;
+      transition: transform 0.2s ease-in-out;
+      width: 100%;
+      height: 500px;
+    }
 
-.zoom-controls button {
-  background-color: #5a4328;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
-}
+    .zoom-controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
 
-    
+    .zoom-controls button {
+      background-color: #5a4328;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 
@@ -184,7 +201,7 @@
     <h1 class="post-title">Hip Hop or House?</h1>
     <div class="date">Posted on July 17, 2025</div>
 
-    <details>
+    <details>                <!------ dont set up posts like this again lmfaoooo - make this into a pdf !!!--->
       <summary>Read Full Analysis</summary>
       <div class="blog-content">
 
@@ -291,153 +308,103 @@
     </details>
   </div>
 
-
-    <!-- !!!!!!!!!!!!!!!!!!! BLOG POST 2: Glass Harmonica === -->
+    <!-- === BLOG POST 2 === The glas harmonica -->
   
-
-
-<div class="post-container">
-  <h1 class="post-title">The Glass Harmonica</h1>
-  <div class="date">Posted on March 12, 2025</div>
-
-     <!--  View Document (with Zoom) -->
-<details>
-  <summary> View Document</summary>
-  <div class="blog-content">
-    <div class="zoom-controls">
-      <button onclick="zoomDoc('doc-viewer-2', 'in')">+</button>
-      <button onclick="zoomDoc('doc-viewer-2', 'out')">−</button>
-      <button onclick="zoomDoc('doc-viewer-2', 'reset')">Reset</button>
+    <div class="post-container">
+      <h1 class="post-title">The Glass Harmonica</h1>
+      <div class="date">Posted on March 12, 2025</div>
+      <details>
+        <summary>View Document</summary>
+        <div class="blog-content">
+          <div class="zoom-controls">
+            <button onclick="zoomDoc('doc-viewer-2', 'in')">+</button>
+            <button onclick="zoomDoc('doc-viewer-2', 'out')">−</button>
+            <button onclick="zoomDoc('doc-viewer-2', 'reset')">Reset</button>
+          </div>
+          <div class="pdf-wrapper">
+            <iframe id="doc-viewer-2" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf&embedded=true"></iframe>
+          </div>
+        </div>
+      </details>
     </div>
-    <div class="pdf-wrapper">
-      <iframe
-        id="doc-viewer-2"
-        src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf&embedded=true"
-        title="CCAV Document Viewer">
-      </iframe>
+
+    <!-- === BLOG POST 3 - MAGNETIC SYNTH === -->
+    <div class="post-container">
+      <h1 class="post-title">Magnetic Synth Teaching Tool</h1>
+      <div class="date">Posted on June 30, 2025</div>
+      <details>
+
+         <!-- YouTube Video Embed -->
+        
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/SCYp1EsZRVA?si=op7eaLCLp5uZa8t-" allowfullscreen></iframe>
+          </div>
+
+
+        <!------ CREATE DOCUMENT VIEW -------> 
+        
+        <summary>View Document</summary>
+        <div class="blog-content">
+          <div class="zoom-controls">
+            <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
+          </div>
+          <div class="pdf-wrapper">
+            <iframe id="doc-viewer-3" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx&embedded=true"></iframe>
+          </div>
+        </div>
+      </details>
     </div>
-    <p>
-      <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/BTOLLE200_MA_CW_pdf.pdf" target="_blank">
-        Download Full Document
-      </a>
-    </p>
+
+    <!-- === BLOG POST 4 (CONVERGIN TECH FOR AV === -->
+    <div class="post-container">
+      <h1 class="post-title">Converging Tech for AV</h1>
+      <div class="date">Posted on June 20, 2025</div>
+      <details>
+        <summary>View Study</summary>
+        <div class="blog-content">
+          <p>This article delves into the physics of sound wave interference...</p>
+
+          <!-- YouTube Video Embed -->
+          
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/1iIEEYbR6mQ?si=op7eaLCLp5uZa8t-" allowfullscreen></iframe>
+          </div>
+          
+          <!------ document viewer ---> 
+          
+          <summary>View Document</summary>
+        <div class="blog-content">
+          <div class="zoom-controls">
+            <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
+            <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
+          </div>
+          <div class="pdf-wrapper">
+            <iframe id="doc-viewer-3" src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"></iframe>
+          </div>
+        </div>
+      </details>
+    </div>
+
+
   </div>
-</details>
-  </div> 
-     </details>
-</div> <!-- properly closes Glass Harmonica post -->
 
+  <script>
+    function zoomDoc(docId, action) {
+      const iframe = document.getElementById(docId);
+      let currentScale = iframe.style.transform ? parseFloat(iframe.style.transform.match(/scale\((.*?)\)/)[1]) : 1;
 
-  
-<!-- === UPDATED BLOG POST: Magnetic Synth Teaching Tool === -->
-
-
-
-<div class="post-container">
-  <h1 class="post-title">Magnetic Synth Teaching Tool</h1>
-  <div class="date">Posted on January 5, 2025</div>
-
-  <details>
-    <summary>Watch Video</summary>
-    <div class="blog-content">
-      <iframe 
-        src="https://www.youtube.com/embed/SCYp1EsZRVA?si=op7eaLCLp5uZa8t-" 
-        title="Magnetic Synth Teaching Tool Video" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </details>
-
-  <details>
-    <summary>View Document</summary>
-    <div class="blog-content">
-      <div class="zoom-controls">
-        <button onclick="zoomDoc('doc-viewer-3', 'in')">+</button>
-        <button onclick="zoomDoc('doc-viewer-3', 'out')">−</button>
-        <button onclick="zoomDoc('doc-viewer-3', 'reset')">Reset</button>
-      </div>
-      <div class="pdf-wrapper">
-        <iframe
-          id="doc-viewer-3"
-          src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx&embedded=true"
-          title="AAI Document Viewer">
-        </iframe>
-      </div>
-      <p>
-        <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/AAI.docx" target="_blank">
-          Download Full Document
-        </a>
-      </p>
-    </div>
-  </details>
-</div>
-
-<!-- === UPDATED BLOG POST: Converging Tech for AV === -->
-
-  <div class="post-container">
-  <h1 class="post-title">Converging Tech for AV</h1>
-  <div class="date">Posted on September 20, 2024</div>
-
-  <details>
-    <summary>Watch Video</summary>
-    <div class="blog-content">
-      <iframe 
-        src="https://www.youtube.com/embed/-lNruqGbjkQ?si=TX6E50Bh8wtyCiG1" 
-        title="Converging Tech for AV Video" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </details>
-
-  <details>
-    <summary>View Document</summary>
-    <div class="blog-content">
-      <div class="zoom-controls">
-        <button onclick="zoomDoc('doc-viewer-4', 'in')">+</button>
-        <button onclick="zoomDoc('doc-viewer-4', 'out')">−</button>
-        <button onclick="zoomDoc('doc-viewer-4', 'reset')">Reset</button>
-      </div>
-      <div class="pdf-wrapper">
-        <iframe
-          id="doc-viewer-4"
-          src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx&embedded=true"
-          title="CTAV Document Viewer">
-        </iframe>
-      </div>
-      <p>
-        <a href="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/CTAV.docx" target="_blank">
-          Download Full Document
-        </a>
-      </p>
-    </div>
-  </details>
-</div>
-
-  
-     
- <script>
-  const zoomLevels = {};
-
-  function zoomDoc(id, action) {
-    const iframe = document.getElementById(id);
-    if (!iframe) return;
-
-    if (!(id in zoomLevels)) zoomLevels[id] = 1;
-
-    if (action === 'in') zoomLevels[id] = Math.min(zoomLevels[id] + 0.1, 3);
-    if (action === 'out') zoomLevels[id] = Math.max(zoomLevels[id] - 0.1, 0.5);
-    if (action === 'reset') zoomLevels[id] = 1;
-
-    iframe.style.transform = `scale(${zoomLevels[id]})`;
-    iframe.style.transformOrigin = '0 0';
-  }
-</script>
-
-  </div> <!-- End .posts-wrapper -->
+      if (action === 'in') {
+        iframe.style.transform = `scale(${currentScale + 0.1})`;
+      } else if (action === 'out') {
+        iframe.style.transform = `scale(${Math.max(currentScale - 0.1, 0.5)})`;
+      } else {
+        iframe.style.transform = 'scale(1)';
+      }
+    }
+  </script>
 
 </body>
 </html>
-
-  
-  
-  
