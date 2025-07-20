@@ -16,16 +16,18 @@
       align-items: center;
     }
    
-   .header-box {
+  .header-box {
   background-color: #a3b18a; /* Matches your post-container background */
   border-radius: 8px; /* Matches your post-container border radius */
   padding: 1.5rem 2rem; /* Padding to match spacing inside your blog post containers */
   box-shadow: 0 2px 8px rgba(74, 59, 40, 0.15); /* Same box shadow as your post-container */
-  width: 100%;
+  width: 50%; /* Sets the width to half the container */
   text-align: center; /* Centers the header title inside the box */
+  margin: 0 auto; /* Centers the header box horizontally */
   margin-bottom: 2rem; /* Adds space below the header box */
-  min-width: 300px; /* Keeps it responsive */
+  min-width: 300px; /* Keeps it responsive, won't shrink too much */
 }
+
 
     .home-button {
       position: fixed;
@@ -193,9 +195,11 @@
   </audio>                                            ---------------------------->
 
   <!-- Page Header -->
-  <header>Hold Tight</header>
+  
+<div class="header-box">
+  <h1 class="post-title">Hold Tight</h1>
+</div>
 
-  <div class="posts-wrapper">
 
     <!-- === ORIGINAL BLOG POST 1: Hip Hop or House? === -->
 
