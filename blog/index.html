@@ -227,25 +227,25 @@
         <p>In production terms, House often favors stripped-back arrangements with emphasis on groove and atmosphere. Vocals are optional and frequently processed into textures. Hip hop, on the other hand, prioritizes vocal clarity, which limits how much processing can occur without compromising intelligibility. This difference is evident in spectral characteristics.</p>
 
         <h2>Recording Methodology</h2>
-        <p>All audio clips were digitized from vinyl using a mixer and interface, then captured in Ableton Live at 44.1kHz, 16-bit resolution. As analog recordings, surface noise—clicks, pops, and groove inconsistencies—was expected. These artifacts are visible in the waveform data but don’t meaningfully affect analysis.</p>
+        <p>All audio clips were digitized from vinyl using a mixer and interface, then captured in Ableton Live at 44.1kHz, 16-bit resolution. As analog recordings, surface noise—clicks, pops, and groove inconsistencies—were expected. These artifacts are visible in the waveform data but don’t meaningfully affect analysis.</p>
 
         <p>Clips were selected to represent each genre from my personal perspective. To challenge the classifier, I included edge cases—instrumental hip hop tracks to reduce vocal bias, and vocal-heavy house tracks to test beyond rhythmic features. Certain Kanye West songs were included for their compressed, almost house-like qualities.</p>
 
         <h2>Analysis Parameters</h2>
         <p><strong>Spectral Flatness</strong><br>
-        Flatness measures how noise-like a signal is. High flatness suggests white-noise characteristics—a flat response across frequency bands. Low flatness indicates tonal content, such as sine waves. House music often shows higher flatness due to its percussive, noise-rich textures.</p>
+    Spectral flatness is a measure of how noise-like a sound signal is across the frequency spectrum. Technically, it compares the geometric mean of the power spectrum to its arithmetic mean. A high flatness value indicates a more uniform distribution of energy—similar to white noise—where no particular frequency dominates. This is typical of percussive or texture-rich content, such as cymbal crashes or high-hat loops, which are common in House music. On the other hand, low spectral flatness implies more tonal or pitched sounds, such as sine waves or melodic instruments. These might be found more prominently in genres that emphasize harmony or melody. In our context, high spectral flatness in House tracks reflects the genre’s emphasis on rhythmic, repetitive elements that create a hypnotic groove, often driven by layered percussion.</p>
 
         <p><strong>Entropy</strong><br>
-        Spectral entropy quantifies the “peakiness” of a signal and helps identify vocal formants. It’s commonly used in voice activity detection. Here, it highlights vocal vs. instrumental sections by identifying structured formants versus erratic noise responses.</p>
+      Spectral entropy measures the unpredictability or complexity of the spectral content in a signal. It's useful in identifying how structured or chaotic the energy distribution is across frequencies. A signal with low entropy might have clear, narrow peaks in its spectrum—often corresponding to identifiable musical notes or vocal formants. High entropy, on the other hand, suggests a noisier, less structured sound. In music analysis, spectral entropy can be a powerful tool to differentiate between vocal and instrumental sections. Vocals typically produce more structured spectral patterns (due to harmonic overtones), whereas instrumental breaks or ambient textures might be more chaotic. This makes entropy particularly useful in segmenting and understanding genre-specific production choices, like the way hip hop may layer complex vocals over lo-fi or sample-based instrumentals, as opposed to the more streamlined breakdowns in House.</p>
 
         <p><strong>Brightness</strong><br>
-        Brightness refers to the concentration of high-frequency energy. House music, with roots in disco, often features bright synths and glistening textures. Hip hop, by contrast, tends toward lower frequencies, gritty vocals, and bass-heavy mixes.</p>
+        Brightness quantifies how much energy is present in the higher frequency range of a sound. A bright sound has more emphasis on treble frequencies—think shimmering hi-hats, synth stabs, or string hits. House music often exhibits high brightness, drawing from its disco lineage, where sparkling textures and treble-heavy instrumentation keep the energy high on the dancefloor. Brightness contributes to a track’s perceived clarity and excitement. In contrast, hip hop often occupies a darker sonic palette, favoring low-end presence, warm mids, and less emphasis on the upper spectrum. This reflects the genre’s historical reliance on sampled records, analog gear, and vocal-centric production, all of which contribute to a grittier, bass-forward mix</p>
 
         <p><strong>Pulse Clarity</strong><br>
-        This measures rhythmic predictability. House music’s four-on-the-floor beat typically yields high pulse clarity. Hip hop, more rhythmically varied due to layered vocals and syncopated beats, often results in lower clarity.</p>
+  Pulse clarity refers to the listener’s ability to detect a steady, underlying beat in the music. High pulse clarity suggests a consistent rhythmic drive—something that's a hallmark of House music, especially with its signature "four-on-the-floor" drum pattern. In analytical terms, this metric examines the strength of periodicities in the audio signal. House’s repetitive drum loops and minimalistic arrangements often score high in this area. In contrast, hip hop tracks tend to play with rhythm more loosely. Syncopation, complex drum patterns, and vocal delivery that pushes and pulls against the beat contribute to lower pulse clarity. This doesn’t make hip hop less rhythmic—just more rhythmically complex and expressive.</p>
 
         <p><strong>Root Mean Square (RMS)</strong><br>
-        RMS measures average loudness over time. While House is perceived as louder, this may relate more to playback context (clubs, festivals) than production. Measuring RMS helps explore whether that perception holds true technically.</p>
+    RMS represents the average power (or loudness) of a signal over time. It’s a technical way to quantify how “loud” a track feels, beyond just peak volume. A high RMS value means the track maintains a high energy level consistently, which contributes to perceived loudness and presence. While House tracks are often described as being louder, this is sometimes more a function of context—clubs, festivals, and large speaker systems—than of the actual mix. Measuring RMS lets us test that assumption: are House tracks inherently louder in their production, or does their impact come from how and where they’re played? Comparatively, hip hop often uses more dynamic range, especially with quieter verses leading into booming choruses. This creates contrast and impact, but can result in lower average RMS values overall.</p>
 
         <h2>Results</h2>
 
@@ -298,24 +298,24 @@
         <img src="https://raw.githubusercontent.com/33bree3/fortpolio/main/blog/figure_l.png" alt="Misclassified House Track" />
         <p>Figure L shows a misclassified house track identified as Hip Hop, likely due to tonal qualities and evolving vocals. Lower pulse clarity despite simple instrumentation may have confused the classifier.</p>
 
-        <h2>Project Summary</h2>
-        <p>This project examined acoustic and structural distinctions between Hip Hop and House through analysis of audio features: RMS, entropy, pulse clarity, brightness, and flatness. Visualizations revealed shared traits and key differences.</p>
+      <h2>Project Summary</h2>
+<p>This project examined the acoustic and structural distinctions between Hip Hop and House music through analysis of five key audio features: RMS (loudness), entropy (spectral unpredictability), pulse clarity (rhythmic definition), brightness (frequency balance), and spectral flatness (texture). These features were visualized and compared to reveal not only technical differences but also genre-specific production choices and cultural tendencies.</p>
 
-        <h3>Key Differences:</h3>
-        <ul>
-          <li><strong>Acoustic Texture:</strong> Hip Hop has higher peakiness and entropy, reflecting layered vocals and dynamic instrumentation.</li>
-          <li><strong>Tonality and Structure:</strong> House features flatter spectral responses, lower entropy, and higher pulse clarity consistent with minimal arrangements.</li>
-          <li><strong>Loudness and Dynamics:</strong> Hip Hop’s vocals give wider dynamic range; House maintains steadier loudness.</li>
-        </ul>
+<h3>Key Differences:</h3>
+<ul>
+  <li><strong>Acoustic Texture:</strong> Hip Hop exhibited higher peakiness and spectral entropy, indicating more complex, layered arrangements often driven by dynamic vocal delivery, shifting instrumental backdrops, and a greater degree of sonic unpredictability.</li>
+  <li><strong>Tonality and Structure:</strong> House showed flatter spectral responses, lower entropy, and consistently high pulse clarity—reflecting its emphasis on minimal, loop-based structures and steady rhythmic drive, ideal for dancefloor cohesion.</li>
+  <li><strong>Loudness and Dynamics:</strong> Hip Hop tracks tended to demonstrate wider dynamic range due to fluctuating vocal presence and verse-chorus contrast, while House music maintained more stable loudness levels, likely due to its repetitive arrangement and DJ-friendly format.</li>
+</ul>
 
-        <h3>Similarities:</h3>
-        <ul>
-          <li>Both share overlapping frequency ranges and rhythmic roots.</li>
-          <li>Instrumentation overlaps in sampled basslines and drums but with different usage.</li>
-        </ul>
+<h3>Similarities:</h3>
+<ul>
+  <li>Both genres share common rhythmic roots, often built on 4/4 patterns, and occupy similar frequency bands in the mix—especially in the low end with kicks and basslines.</li>
+  <li>There is significant overlap in instrumentation, such as the use of sampled drums and bass loops, although each genre employs these elements differently to suit its aesthetic—Hip Hop for groove and narrative support; House for drive and immersion.</li>
+</ul>
 
-        <h3>Cultural and Creative Context:</h3>
-        <p>Hip Hop emphasizes storytelling and vocal presence; House leans into danceable grooves and atmosphere. The genres influence each other while retaining identities. This analysis shows how acoustic parameters mirror cultural distinctions but also highlights challenges in computational genre classification.</p>
+<h3>Cultural and Creative Context:</h3>
+<p>Beyond technical metrics, these genres reflect different artistic priorities. Hip Hop foregrounds lyrical storytelling, rhythmic complexity, and expressive performance. House, in contrast, centers on collective experience, groove continuity, and atmosphere. While the two styles remain distinct, they often intersect—borrowing production techniques, vocal samples, and rhythmic ideas. This analysis underscores how measurable acoustic traits align with genre identities, but also illustrates the fluidity and overlap that make computational genre classification an ongoing challenge.</p>
 
       </div>
     </details>
